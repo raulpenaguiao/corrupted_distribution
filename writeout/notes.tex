@@ -1,0 +1,225 @@
+\documentclass[a4paper]{amsart}
+\usepackage{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{cite}
+\usepackage{amssymb,amsthm,amsmath,mathrsfs,amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amssymb, amsmath,amsthm,xcolor,bm,color,tikz,euscript}
+\usepackage{xcolor,bm,tikz,euscript,sansmath,mathtools}
+\usetikzlibrary{3d,calc}
+\usetikzlibrary{positioning,matrix,arrows,decorations.pathmorphing}
+\usepackage{amssymb,amsthm,amsmath,mathrsfs}
+\usepackage{graphicx,enumerate, microtype}
+\usepackage{xcolor,bm,color,tikz,euscript,sansmath}
+\usepackage{tikz-cd}
+\usepackage{subfig}
+
+\usepackage[all]{xy}
+
+\usepackage{hyperref}
+\usepackage{url, hypcap}
+\definecolor{darkblue}{RGB}{0,0,160}
+\hypersetup{
+colorlinks,%
+citecolor=darkblue,%
+filecolor=black,%
+linkcolor=darkblue,%
+urlcolor=darkblue
+}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\tikzstyle{invisivertex} = [black, shape=rectangle, minimum size=0pt, inner sep=3pt]
+\tikzstyle{circledvertex} = [violet!80, draw, shape=circle, minimum size=0pt, inner sep=3pt]
+\tikzstyle{dot} = [black, fill, shape=circle, minimum size=3pt, inner sep=2pt]
+\tikzstyle{opendot} = [draw, black, shape=circle, minimum size=6pt, inner sep=1pt]
+\tikzstyle{edgelabel} = [magenta, shape=circle, minimum size=6pt, inner sep=1pt]
+
+\usepackage[colorinlistoftodos]{todonotes}
+\setlength{\marginparwidth}{2cm}
+\newcommand{\galen}[1]{\todo[size=\tiny,color=blue!30]{#1 --G.}}
+\newcommand{\raul}[1]{\todo[color=green!10,inline]{Raul: #1}}
+\newcommand{\ben}[1]{\todo[size=\tiny,color=violet!30]{#1 --Ben}}
+
+
+\usepackage{cleveref}
+%
+% \usepackage{array}
+% \usepackage{cite}
+% \usepackage{amssymb,amsthm,amsmath,mathrsfs,amsfonts}
+% \usepackage{fancyhdr,color}
+% \usepackage{amsmath,amssymb,amsthm,graphicx,enumerate, fancyhdr, microtype}
+% \usepackage{amssymb, amsmath,amsthm,xcolor,bm,hyperref,color,tikz,euscript}
+% \usepackage{xcolor,bm,hyperref,color,tikz,euscript,sansmath,ytableau, mathtools}
+% \usetikzlibrary{3d}
+% \usetikzlibrary{positioning,matrix,arrows,decorations.pathmorphing}
+% \usepackage{amssymb,amsthm,amsmath,mathrsfs}
+% \usepackage{fancyhdr,color}
+% \usepackage{graphicx,enumerate, fancyhdr, microtype}
+% \usepackage{xcolor,bm,color,tikz,euscript,sansmath,ytableau}
+% \usepackage{tikz-cd}
+% \usepackage{subfig}
+%
+% \usepackage{cleveref}
+% \usepackage{todonotes}
+
+\usepackage[all]{xy}
+
+%\usepackage{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{bbm}
+
+% Abbreviations:
+
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cK}{\mathcal{K}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cpI}{p\mathcal{I}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\GL}{\mathbf{GL}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bw}{\mathrm{bw}}
+\newcommand{\tw}{\mathrm{tw}}
+
+\newcommand{\init}{\mathrm{in}}
+\newcommand{\LT}{\init}
+
+
+% \newcommand{\RR}{\mathbf{R}}
+
+\newcommand{\aaa}{\mathbf{a}}
+\newcommand{\bbb}{\mathbf{b}}
+\newcommand{\ccc}{\mathbf{c}}
+\newcommand{\ddd}{\mathbf{d}}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Tr}{{\sf Tr}}
+\newcommand{\Gr}{{\sf Gr}}
+\newcommand{\Var}{{\sf V}}
+\newcommand{\Ideal}{{\sf I}}
+\newcommand{\Mat}{{\sf Mat}}
+\newcommand{\rank}{{\sf rank}}
+\newcommand{\cols}{{\sf cols}}
+\newcommand{\sqf}{\mathsf{sf}}
+\newcommand{\Hilb}{{\sf Hilb}}
+\newcommand{\minors}{{\sf minors}}
+\newcommand{\len}{\ell}
+
+\newcommand{\vv}{\mathsf{v}}
+\newcommand{\vw}{\mathsf{w}}
+\newcommand{\vj}{\mathsf{j}}
+\newcommand{\vx}{\mathsf{x}}
+\newcommand{\vy}{\mathsf{y}}
+\newcommand{\vz}{\mathsf{z}}
+\newcommand{\va}{\mathsf{a}}
+
+\DeclareMathOperator{\spn}{span}
+
+\newcommand{\Dfn}[1]{\emph{\bfseries #1}}
+
+
+% stats
+\newcommand{\E}{\mathbb{E}}
+
+%
+% Math environment setup:
+%
+\newtheorem{lemma}{Lemma}
+\newtheorem{claim}[lemma]{Claim}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{thm}[lemma]{Theorem}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{cor}[lemma]{Corollary}
+\newtheorem{conjecture}[lemma]{Conjecture}
+\newtheorem{guess}[lemma]{Guess}
+
+% Definition:
+\theoremstyle{definition}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{problem}[lemma]{Problem}
+
+\theoremstyle{remark}
+\newtheorem{to do}[lemma]{To Do}
+\newtheorem{observation}[lemma]{Observation}
+
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{note}[lemma]{Note}
+\newtheorem{question}[lemma]{Question}
+
+\theoremstyle{remark}
+\newtheorem{example}[lemma]{Example}
+
+\title{Distribution parameter inference with minimal oracle access}
+\date{\today}
+\author{Raul Penaguiao}
+
+\begin{document}
+
+
+
+\begin{abstract}
+In this paper we explore a problem with corrupted databases and error correction.
+An exploratory essay on inferring properties of a distribution by sampling.
+\end{abstract}
+
+\maketitle
+
+
+
+
+\section{Introduction}
+
+When creating or working with structured data, data sanitization is fundamental for the correct inference of properties of interest.
+However, that may not be readily available, due to costs or time constraints, and we must expediently assess variables of interest in the database through sampling.
+In this essay we propose to do exactly that.
+
+Fix a parameter $p$.
+Two probability distributions $\mu_Y$ and $\mu_Z$ are given, of which the following mixing $\mu_X$ is created:
+Let $I \sim \mathrm{Bernoulli}(p)$, then $X = I \times Y + (1 - I) \times Z$.
+
+
+
+\begin{problem}
+Find a $95 \%$ confidence interval for the expected value of the distribution $\mu_Y$ with a minimal number of access to the oracle.
+\end{problem}
+
+
+This is an exploratory essay on inferring properties of a distribution by sampling.
+
+
+\section{Methods proposed}
+
+
+\subsection{Bucket method}
+
+
+
+\subsection{Weighted sampling}
+
+
+Our goal is to estimate $\E [ Y ] = p \E [ X ]$ via 
+
+\bibliographystyle{plain}
+\bibliography{bibliog}
+
+
+\end{document}
