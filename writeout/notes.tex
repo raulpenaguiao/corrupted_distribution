@@ -190,12 +190,18 @@ An exploratory essay on inferring properties of a distribution by sampling.
 
 When creating or working with structured data, data sanitization is fundamental for the correct inference of properties of interest.
 However, that may not be readily available, due to costs or time constraints, and we must expediently assess variables of interest in the database through sampling.
-In this essay we propose to do exactly that.
+In this essay we propose to do exactly that, via two different methods.
 
+We will now describe the theoretical problem.
 Fix a parameter $p$.
-Two probability distributions $\mu_Y$ and $\mu_Z$ are given, of which the following mixing $\mu_X$ is created:
+There are two probability distributions $\mu_Y$ and $\mu_Z$ that are unknown, of which the following mixing $\mu_X$ is created:
 Let $I \sim \mathrm{Bernoulli}(p)$, then $X = I \times Y + (1 - I) \times Z$.
+The distribution $\mu_X$ is known.
+We will interpret $Z$ to describe erroneous database entries and will have a different distribution from $Y$, the target data to be studied.
 
+We have access to an oracle $\mathcal O$ that, given a sampled data from $\mu_X$, determines whether this data came from the distribution $\mu_Z$ or $\mu_Y$.
+In this way, and by sampling and accessing the oracle an unlimited amount of times, we are able to assess the distributions of $\mu_Y, \mu_Z$.
+The following problem tries to do this in the most economical way.
 
 
 \begin{problem}
@@ -211,12 +217,12 @@ This is an exploratory essay on inferring properties of a distribution by sampli
 
 \subsection{Bucket method}
 
-
+We will find the distribution of $Z$ and $Y$ by sampling.
 
 \subsection{Weighted sampling}
 
 
-Our goal is to estimate $\E [ Y ] = p \E [ X ]$ via 
+Our goal is to estimate $\E [ Y ]$ via $\E [ X ] = p \E[Y] + (1-p) \E[Z]$.
 
 \bibliographystyle{plain}
 \bibliography{bibliog}
